@@ -76,8 +76,11 @@ public class Sale {
 		Integer cardMonth = card.getExpirationDate().getMonth();
 		Integer cardYear = card.getExpirationDate().getYear();
 		
-		if(cardMonth < saleMonth && cardYear < saleYear)
-			return false;
+		if(cardYear < saleYear){
+            return false;
+        }else if (cardMonth < saleMonth){
+            return false;
+        }
 		
 		return true;
 	}
